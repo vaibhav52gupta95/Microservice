@@ -1,0 +1,18 @@
+<!-- src/main/resources/templates/task-details.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Manager - Task Details</title>
+</head>
+<body>
+<h2>Task Details</h2>
+<p>ID: <span th:text="${task.id}"></span></p>
+<p>Name: <span th:text="${task.name}"></span></p>
+<p>Notes:
+<ul>
+    <li th:each="note : ${task.notes}" th:text="${note.content}"></li>
+</ul>
+</p>
+<a th:href="@{/tasks}">Back to Tasks</a>
+</body>
+</html>

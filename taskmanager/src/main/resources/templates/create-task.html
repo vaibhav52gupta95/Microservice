@@ -1,0 +1,16 @@
+<!-- src/main/resources/templates/create-task.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Manager - Create Task</title>
+</head>
+<body>
+<h2>Create New Task</h2>
+<form th:action="@{/tasks/create}" th:object="${task}" method="post">
+    <label>Name: <input type="text" th:field="*{name}" required/></label><br/>
+    <!-- You can add fields for notes here -->
+    <button type="submit">Create Task</button>
+</form>
+<a th:href="@{/tasks}">Back to Tasks</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!-- src/main/resources/templates/delete-confirmation.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Manager - Delete Confirmation</title>
+</head>
+<body>
+<h2>Delete Confirmation</h2>
+<p>Are you sure you want to delete the task with ID <span th:text="${task.id}"></span>?</p>
+<form th:action="@{/tasks/{id}/delete(id=${task.id})}" method="post">
+    <button type="submit">Delete</button>
+</form>
+<a th:href="@{/tasks}">Cancel</a>
+</body>
+</html>

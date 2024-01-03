@@ -1,0 +1,16 @@
+<!-- src/main/resources/templates/edit-task.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Manager - Edit Task</title>
+</head>
+<body>
+<h2>Edit Task</h2>
+<form th:action="@{/tasks/{id}/edit(id=${task.id})}" th:object="${task}" method="post">
+    <label>Name: <input type="text" th:field="*{name}" required/></label><br/>
+    <!-- You can add fields for notes here -->
+    <button type="submit">Update Task</button>
+</form>
+<a th:href="@{/tasks}">Back to Tasks</a>
+</body>
+</html>
